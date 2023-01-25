@@ -4,7 +4,7 @@
 	{
 		void Insert(Entities.JsonInBase64 jsonInBase64);
 
-		Entities.JsonInBase64 GetJson(int id);
+		Task<Entities.JsonInBase64> GetJsonAsync(int id);
 		
 	}
 }

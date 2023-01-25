@@ -37,8 +37,8 @@ namespace CompareJson.Api.Domain.Query.JsonCompare
 				_logger.LogInformation($@"[{nameof(JsonInBase64LeftCommandHandler)}].Handle - 
                     Start.| Id={query.Id}");
 
-				var inputLeft = _jsonInBase64LeftRepository.GetJson(query.Id);
-				var inputRight = _jsonInBase64RightRepository.GetJson(query.Id);
+				var inputLeft = await _jsonInBase64LeftRepository.GetJsonAsync(query.Id);
+				var inputRight = await _jsonInBase64RightRepository.GetJsonAsync(query.Id);
 
 				if (inputLeft == null || inputRight == null)
 					throw new JsonNotFoundException();
@@ -56,7 +56,6 @@ namespace CompareJson.Api.Domain.Query.JsonCompare
 				throw;
 			}
 		}
-
 		private JsonCompareQueryResponse CompareJsonInBase64(JsonCompareQuery query, JsonInBase64 inputLeft, JsonInBase64 inputRight)
 		{
 			var response = new JsonCompareQueryResponse();
@@ -81,7 +80,6 @@ namespace CompareJson.Api.Domain.Query.JsonCompare
 				return response;
 			}
 		}
-
 		private List<Diff> ProcessDiffs(JsonInBase64 inputLeft, JsonInBase64 inputRight)
 		{
 			var diffList = new List<Diff>();

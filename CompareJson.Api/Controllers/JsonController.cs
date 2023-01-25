@@ -23,7 +23,6 @@ namespace CompareJson.Api.Controllers
 		public async Task<IActionResult> InsertJsonInBase64Right([FromRoute] int id, [FromBody] JsonInBase64RightCommand request)
 		{
 			request.Id = id;
-
 			return Ok(await _mediatorService.Send(request));
 		}
 
