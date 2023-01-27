@@ -31,7 +31,7 @@ namespace CompareJson.Api.Domain.Commands.JsonInBase64Left
 
 				var jsonInBase64 = _mapper.Map<Entities.JsonInBase64>(command);
 
-				 _jsonInBase64LeftRepository.Insert(jsonInBase64);
+				 await _jsonInBase64LeftRepository.InsertAsync(jsonInBase64);
 
 				_logger.LogInformation($@"[{nameof(JsonInBase64LeftCommandHandler)}].Handle - 
                     End. | JsonInBase64={command.Base64} | Id={command.Id}");

@@ -28,7 +28,7 @@ namespace CompareJson.Api.Controllers
 
 		[HttpPost("diff/{id}/left")]
 		[ProducesResponseType(typeof(JsonInBase64LeftCommandResponse), (int)HttpStatusCode.OK)]
-		public async Task<IActionResult> InsertJsonInBase64Left([FromRoute] int id, [FromBody] JsonInBase64LeftCommand request)
+		public async Task<IActionResult> InsertJsonInBase64Left(int id, [FromBody] JsonInBase64LeftCommand request)
 		{
 			request.Id = id;
 			return Ok(await _mediatorService.Send(request));

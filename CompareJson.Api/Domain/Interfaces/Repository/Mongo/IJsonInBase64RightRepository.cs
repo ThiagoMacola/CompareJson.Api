@@ -1,10 +1,11 @@
-﻿namespace CompareJson.Api.Domain.Interfaces.Repository.Mongo
+﻿using CompareJson.Api.Domain.Entities;
+
+namespace CompareJson.Api.Domain.Interfaces.Repository.Mongo
 {
 	public interface IJsonInBase64RightRepository
 	{
-		void Insert(Entities.JsonInBase64 jsonInBase64);
-
-		Task<Entities.JsonInBase64> GetJsonAsync(int id);
+		Task InsertAsync(Entities.JsonInBase64 jsonInBase64);
+		Task<JsonInBase64> GetJsonAsync(int id);
 
 	}
 }

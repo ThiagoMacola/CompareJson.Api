@@ -12,19 +12,15 @@ namespace CompareJson.Api.Infrastructure.Data.Repositories.Mongo
 		public JsonRightRepository(IDatabaseConfig databaseConfig)
 		{
 			var client = new MongoClient(databaseConfig.ConnectionString);
-			var database =  client.GetDatabase(databaseConfig.DatabaseName);
+			var database = client.GetDatabase(databaseConfig.DatabaseName);
 
-			_mongoCollection = database.GetCollection<JsonInBase64>("JsonInBase64Right");
+			_mongoCollection = database.GetCollection<JsonInBase64>("JsonInBase64Left");
 		}
 
-		public async Task<JsonInBase64> GetJsonAsync(int id)
-		{
-			return (JsonInBase64)await _mongoCollection.FindAsync(json => json.Id == id);
-		}
-
-		public void Insert(JsonInBase64 jsonInBase64)
-		{
-			_mongoCollection.InsertOne(jsonInBase64);	
-		}
+		public async Task<JsonInBase64> GetJsonAsync(int id) => 
+			await _mongoCollection.Find(json => json.Id == id).FirstOrDefaultAsync();
+	
+		public async Task InsertAsync(JsonInBase64 jsonInBase64) => 
+			await _mongoCollection.InsertOneAsync(jsonInBase64);
 	}
 }

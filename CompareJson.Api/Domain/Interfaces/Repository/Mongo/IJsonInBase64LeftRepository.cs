@@ -2,7 +2,7 @@
 {
 	public interface IJsonInBase64LeftRepository
 	{
-		void Insert(Entities.JsonInBase64 jsonInBase64);
+		Task InsertAsync(Entities.JsonInBase64 jsonInBase64);
 
 		Task<Entities.JsonInBase64> GetJsonAsync(int id);
 		
