@@ -1,25 +1,25 @@
 ﻿using AutoMapper;
-using CompareJson.Api.Domain.Commands.JsonInBase64Left;
+using CompareJson.Api.CrossCutting.Configuration.Helpers;
+using CompareJson.Api.Domain.Entities;
 using CompareJson.Api.Domain.Interfaces.Repository.Mongo;
 using MediatR;
-using System;
 
 namespace CompareJson.Api.Domain.Commands.JsonInBase64Right
 {
 	public class JsonInBase64RightCommandHandler : IRequestHandler<JsonInBase64RightCommand, JsonInBase64RightCommandResponse>
 	{
-		private readonly IJsonInBase64RightRepository _jsonInBase64RightRepository;
+		private readonly IJsonInBase64MongoRepository _jsonInBase64Repository;
 		private readonly IMapper _mapper;
 		private readonly ILogger _logger;
 
 		public JsonInBase64RightCommandHandler
 		(
-			IJsonInBase64RightRepository jsonInBase64RightRepository,
+			IJsonInBase64MongoRepository jsonInBasRightRepository,
 			IMapper mapper,
 			ILoggerFactory loggerFactorty
 		)
 		{
-			_jsonInBase64RightRepository = jsonInBase64RightRepository;
+			_jsonInBase64Repository = jsonInBasRightRepository;
 			_mapper = mapper;
 			_logger = loggerFactorty.CreateLogger<JsonInBase64RightCommandHandler>();
 		}
@@ -31,9 +31,9 @@ namespace CompareJson.Api.Domain.Commands.JsonInBase64Right
 				_logger.LogInformation($@"[{nameof(JsonInBase64RightCommandHandler)}].Handle - 
                      Start. | JsonInBase64={command.Base64} | Id={command.Id}");
 
-				var jsonInBase64 = _mapper.Map<Entities.JsonInBase64>(command);
+				var jsonInBase64 = _mapper.Map<JsonInBase64>(command);
 
-				await _jsonInBase64RightRepository.InsertAsync(jsonInBase64);
+				await _logger.Mensure(async () => await _jsonInBase64Repository.InsertAsync(jsonInBase64), "InsertRightAsync");
 
 				_logger.LogInformation($@"[{nameof(JsonInBase64RightCommandHandler)}].Handle - 
                      End. | JsonInBase64={command.Base64} | Id={command.Id}");

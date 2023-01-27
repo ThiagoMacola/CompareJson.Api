@@ -2,13 +2,8 @@
 {
     public class JsonInBase64
     {
-        public JsonInBase64(string base64, int id)
-        {
-            Base64 = base64;
-            Id = id;
-        }
-
-        public string Base64 { get; set; }
-        public int Id { get; set; }
+		public int Id { get; set; }
+		public string Base64 { get; set; }   
+        public string Position { get; set; }
     }
 }

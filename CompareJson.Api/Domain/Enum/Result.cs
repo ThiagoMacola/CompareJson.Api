@@ -2,7 +2,7 @@
 
 namespace CompareJson.Api.Domain.Enum
 {
-	public enum ResultEnum
+	public enum Result
 	{
 		[Description("Equals")]
 		Equals = 0,

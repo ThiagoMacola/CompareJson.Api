@@ -4,12 +4,8 @@ namespace CompareJson.Api.Domain.Query.JsonCompare
 {
 	public class JsonCompareQueryResponse
 	{
-		public int? Key { get; set; }
-		public string? Result { get; set; }
-		public IEnumerable<DiffResponse>? ListDiff { get; set; }
-		public class DiffResponse
-		{
-			public char Caracter { get; set; }
-		}
+		public int Id { get; set; }
+		public string Message { get; set; }
+		public int? Length { get; set; }	
 	}
 }
