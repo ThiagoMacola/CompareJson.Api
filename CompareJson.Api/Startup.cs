@@ -30,8 +30,8 @@ namespace CompareJson.Api
 			services.AddAutoMapper(typeof(JsonInBase64RightCommandProfile));
 			services.AddAutoMapper(typeof(JsonCompareQueryProfile));
 
-			services.AddSingleton<IJsonInBase64RightRepository, JsonRightRepository>();
-			services.AddSingleton<IJsonInBase64LeftRepository, JsonLeftRepository>();
+			services.AddSingleton<IJsonInBase64Repository, JsonInBase64Repository>();
+	
 			
 			services.AddControllers();
 			services.AddEndpointsApiExplorer();
