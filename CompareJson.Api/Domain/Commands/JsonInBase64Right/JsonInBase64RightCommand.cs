@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Newtonsoft.Json;
 
 namespace CompareJson.Api.Domain.Commands.JsonInBase64Right
 {

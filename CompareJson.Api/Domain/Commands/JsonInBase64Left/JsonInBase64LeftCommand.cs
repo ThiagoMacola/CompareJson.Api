@@ -11,6 +11,6 @@ namespace CompareJson.Api.Domain.Commands.JsonInBase64Left
 		}
 
 		public string Base64 { get; set; }
-        public int Id { get; set; }
+		public int Id { get; set; }
     }
 }

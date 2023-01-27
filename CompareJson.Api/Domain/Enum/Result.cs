@@ -4,13 +4,13 @@ namespace CompareJson.Api.Domain.Enum
 {
 	public enum Result
 	{
-		[Description("Equals")]
+		[Description("The data are the same.")]
 		Equals = 0,
 
-		[Description("DifferentSizes")]
+		[Description("The data are different sizes")]
 		DifferentSizes = 1,
 
-		[Description("Different")]
+		[Description("They are the same size but with differences")]
 		Different = 2
 	}
 }

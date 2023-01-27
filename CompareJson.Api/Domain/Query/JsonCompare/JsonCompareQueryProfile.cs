@@ -1,13 +1,9 @@
 ﻿using AutoMapper;
-using CompareJson.Api.Domain.Commands.JsonInBase64Right;
 using CompareJson.Api.Domain.Entities;
-using CompareJson.Api.Domain.Enum;
-using EnumsNET;
-using static CompareJson.Api.Domain.Query.JsonCompare.JsonCompareQueryResponse;
 
 namespace CompareJson.Api.Domain.Query.JsonCompare
 {
-    public class JsonCompareQueryProfile : Profile
+	public class JsonCompareQueryProfile : Profile
 	{
 		public JsonCompareQueryProfile()
 		{
