@@ -37,6 +37,7 @@ namespace CompareJson.Api.Domain.Commands.JsonInBase64Right
 
 				if (!jsonInBase64.IsBase64String(jsonInBase64.Base64))
 					throw new JsonIsNotBase64Exception();
+
 				await _logger.Measure(async () => await _jsonBase64Repository.AddOrUpdateJsonAsync(jsonInBase64), "AddOrUpdateJsonAsync");
 				
 				_logger.LogInformation($@"[{nameof(JsonInBase64RightCommandHandler)}].Handle - 
