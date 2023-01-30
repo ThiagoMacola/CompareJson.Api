@@ -11,17 +11,19 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Enums.NET" Version="4.0.1" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.2" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
-    <PackageReference Include="MongoDB.Driver.Core" Version="2.18.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="ServiceStack.Redis" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CompareJson.CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj" />
+    <ProjectReference Include="..\CompareJson.Domain\CompareJson.Domain.csproj" />
+    <ProjectReference Include="..\CompareJson.Infrastructure.Data\CompareJson.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,15 +1,13 @@
-﻿using CompareJson.Api.CrossCutting.Execeptions;
-using CompareJson.Api.Domain.Commands.JsonInBase64Left;
-using CompareJson.Api.Domain.Commands.JsonInBase64Right;
-using CompareJson.Api.Domain.Interfaces.Repository.InMemory;
-using CompareJson.Api.Domain.Query.JsonCompare;
-using CompareJson.Api.Infrastructure.Data.DatabaseContext;
-using CompareJson.Api.Infrastructure.Data.Repositories.InMemory;
+﻿using CompareJson.Api.Middlewares;
+using CompareJson.Domain.Commands.JsonInBase64Left;
+using CompareJson.Domain.Commands.JsonInBase64Right;
+using CompareJson.Domain.Interfaces.Repository.InMemory;
+using CompareJson.Domain.Querys.JsonCompare;
+using CompareJson.Infrastructure.Data.Sql.DatabaseContext;
+using CompareJson.Infrastructure.Data.Sql.Repositories.InMemory;
+using FluentValidation.AspNetCore;
 using MediatR;
 using System.Reflection;
-using FluentValidation.AspNetCore;
-using FluentValidation;
-using Microsoft.AspNetCore.Identity;
 
 namespace CompareJson.Api
 {
@@ -28,20 +26,16 @@ namespace CompareJson.Api
 			services.AddAutoMapper(typeof(JsonInBase64LeftCommandProfile));
 			services.AddAutoMapper(typeof(JsonInBase64RightCommandProfile));
 			services.AddAutoMapper(typeof(JsonCompareQueryProfile));
-
+			services.AddTransient<GlobalExceptionHandlingMiddleware>();
 			services.AddDbContext<JsonBase64Context>();
 
 			services.AddTransient<IJsonBase64Repository, JsonBase64Repository>();
 
-			services.AddValidatorsFromAssembly(typeof(JsonInBase64LeftCommandValidator).Assembly);
-			services.AddControllers(x =>
-				{
-					x.Filters.Add<JsonIsNotBase64Exception>();
-				}
-			);
+			services.AddControllers()
+				.AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Startup>());
+
 			services.AddEndpointsApiExplorer();
 			services.AddSwaggerGen();
-
 		}
 
 		public void Configure(WebApplication app, IWebHostEnvironment environment)
@@ -54,10 +48,11 @@ namespace CompareJson.Api
 
 			app.UseHttpsRedirection();
 
+			app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+
 			app.UseAuthorization();
 
 			app.MapControllers();
-
 		}
 	}
 }

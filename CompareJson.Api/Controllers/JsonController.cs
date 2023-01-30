@@ -1,6 +1,6 @@
-﻿using CompareJson.Api.Domain.Commands.JsonInBase64Left;
-using CompareJson.Api.Domain.Commands.JsonInBase64Right;
-using CompareJson.Api.Domain.Query.JsonCompare;
+﻿using CompareJson.Domain.Commands.JsonInBase64Left;
+using CompareJson.Domain.Commands.JsonInBase64Right;
+using CompareJson.Domain.Querys.JsonCompare;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
