@@ -3,15 +3,15 @@ using CompareJson.Domain.Commands.JsonInBase64Left;
 using CompareJson.Domain.Commands.JsonInBase64Right;
 using CompareJson.Domain.Interfaces.Repository.InMemory;
 using CompareJson.Domain.Querys.JsonCompare;
-using CompareJson.Infrastructure.Data.Sql.DatabaseContext;
-using CompareJson.Infrastructure.Data.Sql.Repositories.InMemory;
+using CompareJson.Infrastructure.Data.DatabaseContext;
+using CompareJson.Infrastructure.Data.Repositories.InMemory;
 using FluentValidation.AspNetCore;
 using MediatR;
 using System.Reflection;
 
 namespace CompareJson.Api
 {
-	public class Startup
+    public class Startup
 	{
 		public IConfiguration Configuration { get; }
 		public Startup(IConfiguration configuration)

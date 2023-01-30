@@ -17,13 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{1CA82E8E-A7F2-46A4-9366-E198BB24E62B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareJson.Domain", "CompareJson.Domain\CompareJson.Domain.csproj", "{AF9B62A1-5B13-4F9F-8BD3-537C560ADA5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Domain", "CompareJson.Domain\CompareJson.Domain.csproj", "{AF9B62A1-5B13-4F9F-8BD3-537C560ADA5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareJson.Infrastructure.Data", "CompareJson.Infrastructure.Data\CompareJson.Infrastructure.Data.csproj", "{79677A19-FB92-4ABD-850D-0B61B92EDE48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Infrastructure.Data", "CompareJson.Infrastructure.Data\CompareJson.Infrastructure.Data.csproj", "{79677A19-FB92-4ABD-850D-0B61B92EDE48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparaJson.CrossCutting.Configuration", "ComparaJson.CrossCutting.Configuration\ComparaJson.CrossCutting.Configuration.csproj", "{F304D67F-B96D-4178-994A-079969A381CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparaJson.CrossCutting.Configuration", "ComparaJson.CrossCutting.Configuration\ComparaJson.CrossCutting.Configuration.csproj", "{F304D67F-B96D-4178-994A-079969A381CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareJson.CrossCutting.Exceptions", "CompareJson.CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj", "{3D2A1EDB-1C18-4D75-B10A-9C562DC63213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.CrossCutting.Exceptions", "CompareJson.CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj", "{3D2A1EDB-1C18-4D75-B10A-9C562DC63213}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareJson.Tests.Shared", "CompareJson.Tests.Shared\CompareJson.Tests.Shared.csproj", "{421C2617-E876-466D-A830-9E163A62826A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareJson.Tests.Unity", "CompareJson.Tests.Unity\CompareJson.Tests.Unity.csproj", "{F8C8E214-567F-404C-8AD5-0E67A2CFBCA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{3D2A1EDB-1C18-4D75-B10A-9C562DC63213}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D2A1EDB-1C18-4D75-B10A-9C562DC63213}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D2A1EDB-1C18-4D75-B10A-9C562DC63213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{421C2617-E876-466D-A830-9E163A62826A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421C2617-E876-466D-A830-9E163A62826A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421C2617-E876-466D-A830-9E163A62826A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421C2617-E876-466D-A830-9E163A62826A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C8E214-567F-404C-8AD5-0E67A2CFBCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C8E214-567F-404C-8AD5-0E67A2CFBCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C8E214-567F-404C-8AD5-0E67A2CFBCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C8E214-567F-404C-8AD5-0E67A2CFBCA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +74,8 @@ Global
 		{79677A19-FB92-4ABD-850D-0B61B92EDE48} = {4C660C41-A5F1-4533-ABD5-FD5C005B73C9}
 		{F304D67F-B96D-4178-994A-079969A381CB} = {A0802BE8-9A4A-4A58-AF97-018CBA7FB364}
 		{3D2A1EDB-1C18-4D75-B10A-9C562DC63213} = {A0802BE8-9A4A-4A58-AF97-018CBA7FB364}
+		{421C2617-E876-466D-A830-9E163A62826A} = {14E3F1CE-EF16-4A17-A677-7B4E9DBE9C95}
+		{F8C8E214-567F-404C-8AD5-0E67A2CFBCA1} = {14E3F1CE-EF16-4A17-A677-7B4E9DBE9C95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31B1ACE9-FBF1-4472-9708-B46819413320}
