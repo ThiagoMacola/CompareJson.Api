@@ -1,27 +1,26 @@
 ﻿using CompareJson.Domain.Interfaces.Repository.InMemory;
-using CompareJson.Tests.Shared.Core;
 using CompareJson.Tests.Shared.Mock.Entities;
-using Moq;
+using NSubstitute;
 
 namespace CompareJson.Tests.Shared.Infrastructure.Repositories.InMemory
 {
-	public class JourneyRepositoryMock : BaseMock<IJsonBase64Repository>
+	public class JsonBase64RepositoryMock
 	{
-		public override Mock<IJsonBase64Repository> GetDefaultInstance()
+		private readonly IJsonBase64Repository mock = Substitute.For<IJsonBase64Repository>();
+
+		public IJsonBase64Repository AddOrUpdateJsonAsync()
 		{
-			SelectAsync();
-			AddOrUpdateJsonAsync();
-			return Mock;
+			mock.AddOrUpdateJsonAsync((JsonInBase64Mock.GetDefaultInstanceLeft()));
+
+			return mock;
 		}
 
-		private void AddOrUpdateJsonAsync()
+		public IJsonBase64Repository SelectAsync()
 		{
-			Setup(r => r.AddOrUpdateJsonAsync(JsonInBase64Mock.GetDefaultInstance()), It.IsAny<bool>());
-		}
+			mock.SelectAsync(Arg.Any<int>(), Arg.Any<string>()).Returns(JsonInBase64Mock.GetDefaultInstanceLeft());
+			mock.SelectAsync(Arg.Any<int>(), Arg.Any<string>()).Returns(JsonInBase64Mock.GetDefaultInstanceRight());
 
-		private void SelectAsync()
-		{
-			Setup(r => r.SelectAsync(It.IsAny<int>(), It.IsAny<string>()), JsonInBase64Mock.GetDefaultInstance());
+			return mock;
 		}
 	}
 }

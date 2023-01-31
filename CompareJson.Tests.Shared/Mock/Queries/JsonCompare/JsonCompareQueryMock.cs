@@ -6,5 +6,6 @@ namespace CompareJson.Tests.Shared.Mock.Queries.JsonCompare
 	{
 		public static JsonCompareQuery GetDefaultInstance() =>
 			new JsonCompareQuery(1) { };
+
 	}
 }
