@@ -18,7 +18,6 @@ namespace CompareJson.Api
 		{
 			Configuration = configuration;
 		}
-
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMediatR(Assembly.GetExecutingAssembly());

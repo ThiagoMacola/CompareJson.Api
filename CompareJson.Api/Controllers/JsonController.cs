@@ -7,7 +7,7 @@ using System.Net;
 
 namespace CompareJson.Api.Controllers
 {
-	[Route("api/v1/jsoninbase64/")]
+	[Route("api/v1/")]
 	[ApiController]
 	public class JsonController : ControllerBase
 	{

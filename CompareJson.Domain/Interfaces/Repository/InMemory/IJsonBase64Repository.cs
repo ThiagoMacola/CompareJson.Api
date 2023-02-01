@@ -6,6 +6,6 @@ namespace CompareJson.Domain.Interfaces.Repository.InMemory
 	{
 		Task<bool> AddOrUpdateJsonAsync(JsonInBase64 jsonInBase64);
 
-		Task<JsonInBase64> SelectAsync(int id, string position);
+		Task<JsonInBase64> SelectAsync(int id, string? position);
 	}
 }

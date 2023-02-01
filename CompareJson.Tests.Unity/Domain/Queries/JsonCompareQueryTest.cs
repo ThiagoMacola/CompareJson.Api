@@ -1,4 +1,6 @@
-﻿using CompareJson.Domain.Querys.JsonCompare;
+﻿using CompareJson.Domain.DomainService;
+using CompareJson.Domain.Interfaces.DomainService;
+using CompareJson.Domain.Querys.JsonCompare;
 using CompareJson.Tests.Shared.Infrastructure.Repositories.InMemory;
 using CompareJson.Tests.Shared.MapperProfiles;
 using CompareJson.Tests.Shared.Mock.Queries.JsonCompare;
@@ -14,9 +16,8 @@ namespace CompareJson.Tests.Unity.Domain.Queries
 			new JsonCompareQueryHandler(
 				MappersMock.GetMock(),
 				new Mock<LoggerFactory>().Object,
-				new JsonBase64RepositoryMock().SelectAsync()
-
-
+				new JsonBase64RepositoryMock().SelectAsync(),
+				new Mock<IJsonInBase64CompareDomainService>().Object
 			);
 
 		[TestCase(Category = "Unity", TestName = "001 - Should call Handle method successfully")]

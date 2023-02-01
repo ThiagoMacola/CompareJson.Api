@@ -17,7 +17,7 @@ namespace CompareJson.Infrastructure.Data.Repositories.InMemory
 		{
 			JsonInBase64 jsonExist = await SelectAsync(jsonInBase64.Id, jsonInBase64.Position);
 
-			if (jsonExist is null)
+			if (jsonExist == null!)
 				await _context.AddAsync(jsonInBase64);
 			else
 				jsonExist.Base64 = jsonInBase64.Base64;
@@ -27,7 +27,7 @@ namespace CompareJson.Infrastructure.Data.Repositories.InMemory
 			return await Task.FromResult(true);
 		}
 
-		public async Task<JsonInBase64> SelectAsync(int id, string position) =>
-			 await _context.JsonInBase64.FindAsync(id, position);
+		public async Task<JsonInBase64> SelectAsync(int id, string? position) =>
+			 (await _context.JsonInBase64.FindAsync(id, position))!;
 	}
 }
