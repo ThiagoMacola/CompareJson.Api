@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CompareJson.Domain\CompareJson.Domain.csproj" />
+    <ProjectReference Include="..\Domain\CompareJson.Domain.csproj" />
   </ItemGroup>
 
 </Project>

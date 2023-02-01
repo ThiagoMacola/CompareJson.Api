@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CompareJson.Domain\CompareJson.Domain.csproj" />
-    <ProjectReference Include="..\CompareJson.Tests.Shared\CompareJson.Tests.Shared.csproj" />
+    <ProjectReference Include="..\Domain\CompareJson.Domain.csproj" />
+    <ProjectReference Include="..\Tests.Shared\CompareJson.Tests.Shared.csproj" />
   </ItemGroup>
 
 </Project>

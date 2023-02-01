@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Api", "CompareJson.Api\CompareJson.Api.csproj", "{42963D8C-7DBA-491F-9B9E-F99453AB67DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Api", "Api\CompareJson.Api.csproj", "{42963D8C-7DBA-491F-9B9E-F99453AB67DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{06C4444A-DB1A-4425-8D03-1A016F502F8B}"
 EndProject
@@ -17,17 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{1CA82E8E-A7F2-46A4-9366-E198BB24E62B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Domain", "CompareJson.Domain\CompareJson.Domain.csproj", "{AF9B62A1-5B13-4F9F-8BD3-537C560ADA5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Domain", "Domain\CompareJson.Domain.csproj", "{AF9B62A1-5B13-4F9F-8BD3-537C560ADA5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Infrastructure.Data", "CompareJson.Infrastructure.Data\CompareJson.Infrastructure.Data.csproj", "{79677A19-FB92-4ABD-850D-0B61B92EDE48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Infrastructure.Data", "Infrastructure.Data\CompareJson.Infrastructure.Data.csproj", "{79677A19-FB92-4ABD-850D-0B61B92EDE48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparaJson.CrossCutting.Configuration", "ComparaJson.CrossCutting.Configuration\ComparaJson.CrossCutting.Configuration.csproj", "{F304D67F-B96D-4178-994A-079969A381CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.CrossCutting.Configuration", "CrossCutting.Configuration\CompareJson.CrossCutting.Configuration.csproj", "{F304D67F-B96D-4178-994A-079969A381CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.CrossCutting.Exceptions", "CompareJson.CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj", "{3D2A1EDB-1C18-4D75-B10A-9C562DC63213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.CrossCutting.Exceptions", "CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj", "{3D2A1EDB-1C18-4D75-B10A-9C562DC63213}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareJson.Tests.Shared", "CompareJson.Tests.Shared\CompareJson.Tests.Shared.csproj", "{421C2617-E876-466D-A830-9E163A62826A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Tests.Shared", "Tests.Shared\CompareJson.Tests.Shared.csproj", "{421C2617-E876-466D-A830-9E163A62826A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareJson.Tests.Unity", "CompareJson.Tests.Unity\CompareJson.Tests.Unity.csproj", "{F8C8E214-567F-404C-8AD5-0E67A2CFBCA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareJson.Tests.Unity", "Tests.Unity\CompareJson.Tests.Unity.csproj", "{F8C8E214-567F-404C-8AD5-0E67A2CFBCA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

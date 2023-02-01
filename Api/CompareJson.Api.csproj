@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CompareJson.CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj" />
-    <ProjectReference Include="..\CompareJson.Domain\CompareJson.Domain.csproj" />
-    <ProjectReference Include="..\CompareJson.Infrastructure.Data\CompareJson.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj" />
+    <ProjectReference Include="..\Domain\CompareJson.Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data\CompareJson.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>

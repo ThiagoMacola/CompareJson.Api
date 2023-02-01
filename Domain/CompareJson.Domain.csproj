@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ComparaJson.CrossCutting.Configuration\ComparaJson.CrossCutting.Configuration.csproj" />
-    <ProjectReference Include="..\CompareJson.CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj" />
+    <ProjectReference Include="..\CrossCutting.Configuration\CompareJson.CrossCutting.Configuration.csproj" />
+    <ProjectReference Include="..\CrossCutting.Exceptions\CompareJson.CrossCutting.Exceptions.csproj" />
   </ItemGroup>
 
 </Project>

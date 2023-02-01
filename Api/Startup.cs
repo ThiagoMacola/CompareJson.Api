@@ -7,6 +7,7 @@ using CompareJson.Domain.Interfaces.Repository.InMemory;
 using CompareJson.Domain.Querys.JsonCompare;
 using CompareJson.Infrastructure.Data.DatabaseContext;
 using CompareJson.Infrastructure.Data.Repositories.InMemory;
+using FluentValidation;
 using FluentValidation.AspNetCore;
 using MediatR;
 using System.Reflection;
@@ -34,8 +35,7 @@ namespace CompareJson.Api
 			services.AddSingleton<IJsonInBase64CompareDomainService, JsonInBase64CompareDomainService>();
 			services.AddScoped<IJsonBase64Repository, JsonBase64Repository>();
 
-			services.AddControllers()
-				.AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Startup>());
+			services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<JsonInBase64LeftCommandValidator>());
 
 			services.AddEndpointsApiExplorer();
 			services.AddSwaggerGen();
