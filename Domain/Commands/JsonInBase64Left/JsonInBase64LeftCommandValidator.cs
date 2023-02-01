@@ -8,6 +8,7 @@ namespace CompareJson.Domain.Commands.JsonInBase64Left
 		{
 			RuleFor(command => command.Base64).NotEmpty().WithMessage("It is necessary to inform a json in base64");
 			RuleFor(command => command.Base64).NotNull().WithMessage("It is necessary to inform a json in base64");
+			RuleFor(command => command.Id).GreaterThan(0).WithMessage("Invalid id, try value greater than 0");
 		}
 	}
 }

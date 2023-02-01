@@ -32,7 +32,7 @@ namespace CompareJson.Api
 			services.AddDbContext<JsonBase64Context>();
 
 			services.AddSingleton<IJsonInBase64CompareDomainService, JsonInBase64CompareDomainService>();
-			services.AddScoped<IJsonBase64Repository, JsonBase64Repository>();
+			services.AddTransient<IJsonBase64Repository, JsonBase64Repository>();
 
 			services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<JsonInBase64LeftCommandValidator>());
 

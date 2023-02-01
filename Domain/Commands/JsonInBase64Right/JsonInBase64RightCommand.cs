@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using System.Text.Json.Serialization;
 
 namespace CompareJson.Domain.Commands.JsonInBase64Right
 {
@@ -11,6 +12,7 @@ namespace CompareJson.Domain.Commands.JsonInBase64Right
 		}
 
 		public string Base64 { get; set; }
+		[JsonIgnore]
 		public int Id { get; set; }
 	}
 }
