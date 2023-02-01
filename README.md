@@ -53,3 +53,4 @@ The results provide the following info in JSON format:
 - Put a cache in the Api layer (Redis for example)
 - Distribute the application in Docker containers and use Kubernets for orchestration.
 - Use an API gateway or create an authentication layer using a jwt token.
+- Implement log monitoring through elasticsearch
