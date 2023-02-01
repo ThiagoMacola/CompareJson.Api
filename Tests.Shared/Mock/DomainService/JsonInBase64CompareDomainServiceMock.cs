@@ -1,15 +1,6 @@
-﻿using CompareJson.Tests.Shared.Core;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CompareJson.Domain.Entities;
 using CompareJson.Domain.Interfaces.DomainService;
-using CompareJson.Domain.Interfaces.Repository.InMemory;
-using CompareJson.Tests.Shared.Mock.Entities;
 using NSubstitute;
-using CompareJson.Domain.Entities;
 
 namespace CompareJson.Tests.Shared.Mock.DomainService
 {

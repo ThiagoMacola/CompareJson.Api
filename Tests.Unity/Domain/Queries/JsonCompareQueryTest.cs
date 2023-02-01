@@ -1,5 +1,4 @@
-﻿using CompareJson.Domain.DomainService;
-using CompareJson.Domain.Interfaces.DomainService;
+﻿using CompareJson.Domain.Interfaces.DomainService;
 using CompareJson.Domain.Querys.JsonCompare;
 using CompareJson.Tests.Shared.Infrastructure.Repositories.InMemory;
 using CompareJson.Tests.Shared.MapperProfiles;

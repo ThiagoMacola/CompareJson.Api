@@ -2,11 +2,9 @@
 using ComparaJson.CrossCutting.Configuration.Helpers;
 using CompareJson.CrossCutting.Exceptions;
 using CompareJson.Domain.Commands.JsonInBase64Left;
-using CompareJson.Domain.Entities;
 using CompareJson.Domain.Enum;
 using CompareJson.Domain.Interfaces.DomainService;
 using CompareJson.Domain.Interfaces.Repository.InMemory;
-using EnumsNET;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
