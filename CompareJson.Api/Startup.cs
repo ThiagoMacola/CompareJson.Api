@@ -1,6 +1,8 @@
 ﻿using CompareJson.Api.Middlewares;
 using CompareJson.Domain.Commands.JsonInBase64Left;
 using CompareJson.Domain.Commands.JsonInBase64Right;
+using CompareJson.Domain.DomainService;
+using CompareJson.Domain.Interfaces.DomainService;
 using CompareJson.Domain.Interfaces.Repository.InMemory;
 using CompareJson.Domain.Querys.JsonCompare;
 using CompareJson.Infrastructure.Data.DatabaseContext;
@@ -20,15 +22,17 @@ namespace CompareJson.Api
 		}
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddMediatR(Assembly.GetExecutingAssembly());
-
-			services.AddAutoMapper(typeof(JsonInBase64LeftCommandProfile));
+			services.AddMediatR(typeof(Startup));
+			services.AddMediatR(typeof(JsonInBase64RightCommand).GetTypeInfo().Assembly);
+			services.AddMediatR(typeof(JsonInBase64LeftCommand).GetTypeInfo().Assembly);
+			services.AddMediatR(typeof(JsonCompareQuery).GetTypeInfo().Assembly);
 			services.AddAutoMapper(typeof(JsonInBase64RightCommandProfile));
 			services.AddAutoMapper(typeof(JsonCompareQueryProfile));
 			services.AddTransient<GlobalExceptionHandlingMiddleware>();
 			services.AddDbContext<JsonBase64Context>();
 
-			services.AddTransient<IJsonBase64Repository, JsonBase64Repository>();
+			services.AddSingleton<IJsonInBase64CompareDomainService, JsonInBase64CompareDomainService>();
+			services.AddScoped<IJsonBase64Repository, JsonBase64Repository>();
 
 			services.AddControllers()
 				.AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Startup>());
