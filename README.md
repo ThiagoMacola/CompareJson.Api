@@ -9,20 +9,25 @@ Provide two endpoints that receive JSON base64 encoded binary data on both endpo
 {
   "base64": "ewogICAgImJhc2U2NCI6ICJ4cHRvIgp9"
 }
+
 [Result] 200
 {
 }
+
 [POST] https://localhost:7076/api/v1/diff/1/left
 [Payload]
 {
   "base64": "ewogICAgImJhc2U2NCI6ICJ4cHRvIgp9"
 }
+
 [Result] 200
 {
 }
 
 Endpoint for comparison between them.
+
 [GET]:  https://localhost:7076/api/v1/diff/1
+
 [Result] 200
 {
   "id": 1,
