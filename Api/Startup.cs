@@ -7,7 +7,6 @@ using CompareJson.Domain.Interfaces.Repository.InMemory;
 using CompareJson.Domain.Querys.JsonCompare;
 using CompareJson.Infrastructure.Data.DatabaseContext;
 using CompareJson.Infrastructure.Data.Repositories.InMemory;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using MediatR;
 using System.Reflection;
@@ -38,7 +37,16 @@ namespace CompareJson.Api
 			services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<JsonInBase64LeftCommandValidator>());
 
 			services.AddEndpointsApiExplorer();
-			services.AddSwaggerGen();
+			services.AddSwaggerGen(sw =>
+			{
+				sw.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+				{
+					Title = "CompareJson Api",
+					Version = "v1",
+					Description = "API responsible for comparing two documents in Json base64 format and returning their similarities, differences and difference sizes",
+					License = new Microsoft.OpenApi.Models.OpenApiLicense() { Name = "Licensed by xpto documentation api" }
+				});
+			});
 		}
 
 		public void Configure(WebApplication app, IWebHostEnvironment environment)
@@ -46,7 +54,11 @@ namespace CompareJson.Api
 			if (app.Environment.IsDevelopment())
 			{
 				app.UseSwagger();
-				app.UseSwaggerUI();
+				app.UseSwaggerUI(sw =>
+				{
+					sw.SwaggerEndpoint("/swagger/v1/swagger.json", "CompareJson.Api v1");
+
+				});
 			}
 
 			app.UseHttpsRedirection();

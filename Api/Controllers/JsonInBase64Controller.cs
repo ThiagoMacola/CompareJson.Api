@@ -9,11 +9,11 @@ namespace CompareJson.Api.Controllers
 {
 	[Route("api/v1/")]
 	[ApiController]
-	public class JsonController : ControllerBase
+	public class JsonInBase64Controller : ControllerBase
 	{
 		private readonly IMediator _mediatorService;
 
-		public JsonController(IMediator mediatorService)
+		public JsonInBase64Controller(IMediator mediatorService)
 		{
 			_mediatorService = mediatorService;
 		}
